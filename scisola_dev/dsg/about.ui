@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Dialog</class>
+ <widget class="QDialog" name="Dialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>500</width>
+    <height>400</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>about</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="logo/icons/icons.qrc">
+    <normaloff>:/logo/beachball.png</normaloff>:/logo/beachball.png</iconset>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QLabel" name="label">
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap resource="logo/icons/icons.qrc">:/logo/logo6.png</pixmap>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLabel" name="label_2">
+     <property name="text">
+      <string>
+
+
+Scisola v1.0
+Copyright © 2014 Triantafyllis Nikolaos
+Licensed under the terms of 
+the GNU General Public License (GPLv2)
+
+Notes:
+Scisola v1.0 developed as a master thesis at 
+University of Patras, Greece
+Computer Engineering and Informatics Department
+
+Special Thanks to:
+Sokos Efthimios, esokos@upatras.gr
+Ilias Aristidis, aristeid@ceid.upatras.gr
+Pavlidis Georgios, pvlds@ceid.upatras.gr
+
+Feedback &amp; Questions to:
+Triantafyllis Nikolaos, triantafyl@ceid.upatras.gr</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeType">
+      <enum>QSizePolicy::Preferred</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>40</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+  </layout>
+ </widget>
+ <resources>
+  <include location="logo/icons/icons.qrc"/>
+ </resources>
+ <connections/>
+</ui>

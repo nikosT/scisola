@@ -1,0 +1,23 @@
+<RCC>
+  <qresource prefix="icons">
+    <file>delete.png</file>
+    <file>refresh.png</file>
+    <file>revise.png</file>
+    <file>browse.png</file>
+    <file>edit.png</file>
+    <file>left.png</file>
+    <file>right.png</file>
+    <file>configure.png</file>
+    <file>search.png</file>
+    <file>help.png</file>
+    <file>play.png</file>
+    <file>start.png</file>
+    <file>stop.png</file>
+    <file>update.png</file>
+  </qresource>
+  <qresource prefix="logo">
+    <file>beachball.png</file>
+    <file>logo5.png</file>
+    <file>logo6.png</file>
+  </qresource>
+</RCC>
