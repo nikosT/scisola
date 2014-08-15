@@ -1,4 +1,12 @@
+The folder contains two subfolders:
+
 scisola
 =======
 
 Open-source python based software for automatic Moment Tensor calculation of events provided by SeisComP3 in real-time
+
+
+scisola_tools
+=======
+
+Assistant utilities for scisola 
