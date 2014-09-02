@@ -16,8 +16,9 @@ scisola_dev
 =======
 Development folder of scisola
 
-
-Licenses:
+------------------------------------
+Licenses
+=======
 * scisola under GPLv2
 * scisola_dev under GPLv2
 * scisola_tools under GPLv2 except below:
