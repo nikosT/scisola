@@ -71,13 +71,13 @@ class Seedlink:
         _proc = subprocess.Popen([self.sc3_path, "exec", self.name,
                           self.host+":"+str(self.port), "-v", "-Q"],
                           stderr=subprocess.PIPE, stdout=subprocess.PIPE)
-        while _proc.poll() is None:
-            _msg = _proc.stderr.readline()
+      #  while _proc.poll() is None:
+     #       _msg = _proc.stderr.readline()
 
             # if an error occured, kill process
-            if "error:" in _msg:
-                _proc.kill()
-                return []
+     #       if "error:" in _msg:
+     #           _proc.kill()
+     #           return []
 
         # output contains available streams
         _output = _proc.communicate()[0]
