@@ -77,15 +77,15 @@ class MainWindow(QtGui.QMainWindow, lib.gui.main.Ui_MainWindow):
 
 
     # when tray icon is activated
-    def changeEvent(self, event):
-        if event.type() == QtCore.QEvent.WindowStateChange:
-            if self.windowState() & QtCore.Qt.WindowMinimized:
-                event.ignore()
-                self.hide()
-                self.trayIcon.show()
-                time.sleep(0.01)
-                self.trayIcon.showMessage('Running',
-                                          'Running in the background...')
+#    def changeEvent(self, event):
+#        if event.type() == QtCore.QEvent.WindowStateChange:
+#            if self.windowState() & QtCore.Qt.WindowMinimized:
+#                event.ignore()
+#                self.hide()
+#                self.trayIcon.show()
+#                time.sleep(0.01)
+#                self.trayIcon.showMessage('Running',
+#                                          'Running in the background...')
 
 
     def closeEvent(self, event):
