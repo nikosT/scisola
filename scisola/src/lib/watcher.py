@@ -141,13 +141,14 @@ class Watcher:
 
         _command = ""
         _event_id = ""
+	_offset = 120 #sec
 
-        _end = datetime.datetime.utcnow()
+        _end = datetime.datetime.utcnow() - datetime.timedelta(seconds=_offset)
 
         _begin = obspy_utc.UTCDateTime(
                       _end - datetime.timedelta(seconds=self.interval-1))
 
-   #     _begin = datetime.datetime(2007,01,01,00,00,00) #needs remove!!
+     #  _begin = datetime.datetime(2007,09,01,00,00,00) #needs remove!!
         _end_date = _end.strftime("%Y-%m-%d %H:%M:%S.%f")
         _begin_date = _begin.strftime("%Y-%m-%d %H:%M:%S.%f")
 
@@ -182,16 +183,33 @@ class Watcher:
 
         _lines = _proc.communicate()[0].split("\n")
 
-        _latitude = round(float(
-                    _lines[9].replace('<value>','').replace('</value>','')),4)
-        _longitude = round(float(
-                   _lines[13].replace('<value>','').replace('</value>','')),4)
-        _depth = int(
-                    _lines[17].replace('<value>','').replace('</value>',''))
-        _magnitude = round(float(
-                   _lines[41].replace('<value>','').replace('</value>','')),2)
-        _datetime = str(
-               _lines[5].strip().replace('<value>','').replace('</value>',''))
+	for _i, _value in enumerate(_lines):
+	    if "<latitude>" in _value:
+                _latitude = round(float(
+                  _lines[_i+1].replace('<value>','').replace('</value>','')),4)
+	    elif "<longitude>" in _value:
+                _longitude = round(float(
+                  _lines[_i+1].replace('<value>','').replace('</value>','')),4)
+	    elif "<depth>" in _value:
+		_depth = int(
+	          _lines[_i+1].replace('<value>','').replace('</value>',''))
+	    elif "<magnitude>" in _value:
+                _magnitude = round(float(
+		  _lines[_i+1].replace('<value>','').replace('</value>','')),2)
+	    elif "<time>" in _value:
+		_datetime = str(
+		  _lines[_i+1].strip().replace('<value>','').replace('</value>',''))
+
+    #    _latitude = round(float(
+    #                _lines[9].replace('<value>','').replace('</value>','')),4)
+    #    _longitude = round(float(
+    #               _lines[13].replace('<value>','').replace('</value>','')),4)
+    #    _depth = int(
+    #                _lines[17].replace('<value>','').replace('</value>',''))
+    #    _magnitude = round(float(
+    #               _lines[41].replace('<value>','').replace('</value>','')),2)
+    #    _datetime = str(
+    #           _lines[5].strip().replace('<value>','').replace('</value>',''))
         _dtime = datetime.datetime.strptime(
                          _datetime, "%Y-%m-%dT%H:%M:%S.%fZ")
         _datetime = _dtime.strftime("%Y/%m/%d %H:%M:%S.%f")
