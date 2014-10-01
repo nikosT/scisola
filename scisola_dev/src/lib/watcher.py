@@ -191,8 +191,8 @@ class Watcher:
                 _longitude = round(float(
                   _lines[_i+1].replace('<value>','').replace('</value>','')),4)
 	    elif "<depth>" in _value:
-		_depth = int(
-	          _lines[_i+1].replace('<value>','').replace('</value>',''))
+		_depth = int(round(float(
+	          _lines[_i+1].replace('<value>','').replace('</value>','')),4))
 	    elif "<magnitude>" in _value:
                 _magnitude = round(float(
 		  _lines[_i+1].replace('<value>','').replace('</value>','')),2)
