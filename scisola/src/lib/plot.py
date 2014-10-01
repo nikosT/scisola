@@ -526,7 +526,7 @@ def contour(time_list, depth_list, dc_list, corr_list, beachball_list,
     plt.savefig(plot_file, dpi=fig.dpi)
 
 
-def beachBall(strike,dip,rake,plot_file):
+def beachBall(strike,dip,rake,mrr,mtt,mpp,mrt,mrp,mtp,plot_file):
     """
     Plotting the focal mechanism
     """
@@ -536,7 +536,10 @@ def beachBall(strike,dip,rake,plot_file):
     _fig_y = 10
     fig = plt.figure(figsize=(_fig_x,_fig_y))
 
-    beach.Beachball([strike,dip,rake], facecolor='r', fig=fig)
+    # mt
+    beach.Beachball([mrr,mtt,mpp,mrt,mrp,mtp], facecolor='r', fig=fig)
+    # dc
+    beach.Beachball([strike,dip,rake], nofill=True, fig=fig)
 
     fig.savefig(plot_file)
 

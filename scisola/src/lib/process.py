@@ -179,7 +179,7 @@ class Process:
 
                 if self.parent:
                     if self.origin.automatic:
-                        self.parent.master_log.info("Starting automatic" + \
+                        self.parent.master_log.info("Starting automatic " + \
                         "procedure for event_id: " + \
                         str(self.origin.event_id) + \
                         "...\n")
@@ -1080,6 +1080,12 @@ class Process:
             plot.beachBall(self.origin.mt.strike,
                            self.origin.mt.dip,
                            self.origin.mt.rake,
+			   self.origin.mt.mrr,
+			   self.origin.mt.mtt,
+			   self.origin.mt.mpp,
+			   self.origin.mt.mrt,
+			   self.origin.mt.mrp,
+			   self.origin.mt.mtp,
                            self.dir.beachball)
 
             self.log.info('Plotting map...\n')
