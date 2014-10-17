@@ -117,24 +117,27 @@ class Watcher:
                 print _event_id
                 orig = origin.Origin()
                 orig = self.getOriginInfo(_event_id, orig)
-                # two threshold requirements in order to run a new event
-                if orig.magnitude >= self.settings.magnitude_threshold and \
-                inrange(self.settings.center_latitude,
-                self.settings.center_longitude,
-                orig.latitude,
-                orig.longitude,
-                self.settings.distance_range):
+		# if event's info exist
+		if orig.datetime and orig.magnitude and orig.depth:
 
-                    _p = process.Process(origin=orig,
-                                settings=self.settings,
-                                station_list=[],
-                                db_scisola=self.db_scisola,
-                                save2DB=True,
-                                timeout = self.settings.process_timeout,
-                                delay = self.settings.process_delay,
-                                parent = self.parent)
+                    # two threshold requirements in order to run a new event
+                    if orig.magnitude >= self.settings.magnitude_threshold and \
+                    inrange(self.settings.center_latitude,
+                    self.settings.center_longitude,
+                    orig.latitude,
+                    orig.longitude,
+                    self.settings.distance_range):
 
-                    _p.start()
+                        _p = process.Process(origin=orig,
+                                    settings=self.settings,
+                                    station_list=[],
+                                    db_scisola=self.db_scisola,
+                                    save2DB=True,
+                                    timeout = self.settings.process_timeout,
+                                    delay = self.settings.process_delay,
+                                    parent = self.parent)
+
+                        _p.start()
 
 
     def getEvent(self):
