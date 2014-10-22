@@ -224,11 +224,11 @@ class Watcher:
         _datetime = _dtime.strftime("%Y/%m/%d %H:%M:%S.%f")
 
         orig.timestamp = datetime.datetime.utcnow()
-        orig.datetime = str(_datetime)
-        orig.magnitude = float(_magnitude)
-        orig.latitude = float(_latitude)
-        orig.longitude = float(_longitude)
-        orig.depth = float(_depth)
+        orig.datetime = _datetime
+        orig.magnitude = _magnitude
+        orig.latitude = _latitude
+        orig.longitude = _longitude
+        orig.depth = _depth
         orig.event_id = str(_event_id)
 
         return orig
