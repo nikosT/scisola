@@ -177,7 +177,6 @@ class Watcher:
         _depth = None
         _magnitude = None
         _datetime = None
-        _event_id = None
 
         _command = self.sc3_path + " exec " + self.scxmldump + \
                    " -q -d " + str(self.db_sc3.type).lower() + "://" + \
