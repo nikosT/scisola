@@ -673,9 +673,9 @@ def selectByAzm(station_list, station_per_sector, station_min):
     new_station_list = []
 
     # sort stations by priority and then by distance from origin
-    station_list.sort(key=operator.attrgetter("priority",
-                                              "distance_by_origin"),
-                                              reverse=False)
+
+    _temp_station_list = sorted(station_list, key=operator.attrgetter('distance_by_origin'))
+    station_list = sorted(_temp_station_list, key=operator.attrgetter('priority'), reverse=True)
 
     #  for each stream object setting sector number based on azimuth and
     #  append stream to a temporary sector list
@@ -730,9 +730,8 @@ def selectISOLAstreams(station_list):
     """
 
     # sort stations by priority and then by distance from origin
-    station_list.sort(key=operator.attrgetter("priority",
-                                              "distance_by_origin"),
-                                              reverse=False)
+    _temp_station_list = sorted(station_list, key=operator.attrgetter('distance_by_origin'))
+    station_list = sorted(_temp_station_list, key=operator.attrgetter('priority'), reverse=True)
 
     # stations can't be more than 21 in order to run ISOLA
     station_list = limitStation_list(station_list)
@@ -745,9 +744,9 @@ def selectISOLAstreams(station_list):
         _list_Z = [x for x in station.stream_list if x.code[2] == 'Z']
 
         # sort streams by priority
-        _list_N.sort(key=operator.attrgetter("priority"), reverse=False)
-        _list_E.sort(key=operator.attrgetter("priority"), reverse=False)
-        _list_Z.sort(key=operator.attrgetter("priority"), reverse=False)
+        _list_N.sort(key=operator.attrgetter("priority"), reverse=True)
+        _list_E.sort(key=operator.attrgetter("priority"), reverse=True)
+        _list_Z.sort(key=operator.attrgetter("priority"), reverse=True)
 
         # stream_list contains at the most one stream per component (N,E,Z)
         station.stream_list = _list_N[0:1] + _list_E[0:1] + _list_Z[0:1]
