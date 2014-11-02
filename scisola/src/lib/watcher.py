@@ -109,35 +109,41 @@ class Watcher:
 
 
     def processing(self):
-        _event_id = None
-        _event_id = self.getEvent()
+        try:
+            _event_id = None
+            _event_id = self.getEvent()
 
-        if _event_id:
-            if not self.db_scisola.EventExist(_event_id):
-                print _event_id
-                orig = origin.Origin()
-                orig = self.getOriginInfo(_event_id, orig)
-		# if event's info exist
-		if orig.datetime and orig.magnitude and orig.depth:
+            if _event_id:
+                if not self.db_scisola.EventExist(_event_id):
+                    print _event_id
+                    orig = origin.Origin()
+                    orig = self.getOriginInfo(_event_id, orig)
+		    # if event's info exist
+		    if orig.datetime and orig.magnitude and orig.depth:
 
-                    # two threshold requirements in order to run a new event
-                    if orig.magnitude >= self.settings.magnitude_threshold and \
-                    inrange(self.settings.center_latitude,
-                    self.settings.center_longitude,
-                    orig.latitude,
-                    orig.longitude,
-                    self.settings.distance_range):
+                        # two threshold requirements in order to run a new event
+                        if orig.magnitude >= self.settings.magnitude_threshold and \
+                        inrange(self.settings.center_latitude,
+                        self.settings.center_longitude,
+                        orig.latitude,
+                        orig.longitude,
+                        self.settings.distance_range):
 
-                        _p = process.Process(origin=orig,
-                                    settings=self.settings,
-                                    station_list=[],
-                                    db_scisola=self.db_scisola,
-                                    save2DB=True,
-                                    timeout = self.settings.process_timeout,
-                                    delay = self.settings.process_delay,
-                                    parent = self.parent)
+                            _p = process.Process(origin=orig,
+                                        settings=self.settings,
+                                        station_list=[],
+                                        db_scisola=self.db_scisola,
+                                        save2DB=True,
+                                        timeout = self.settings.process_timeout,
+                                        delay = self.settings.process_delay,
+                                        parent = self.parent)
 
-                        _p.start()
+                            _p.start()
+
+        except:
+            if self.parent:
+                self.parent.master_log.exception()
+            pass
 
 
     def getEvent(self):
