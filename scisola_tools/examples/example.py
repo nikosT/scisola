@@ -24,9 +24,11 @@ sys.dont_write_bytecode = True
 # append the folder of scisola to python path
 sys.path.append("scisola-master/scisola")
 
-# import the process module
+# import the necessary scisola modules
+import  src.lib.origin as origin
+import  src.lib.database as database
+import  src.lib.settings as settings
 import  src.lib.process as process
-
 
 # creates an Origin object
 # fill with the desired values
