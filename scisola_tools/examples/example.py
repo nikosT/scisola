@@ -57,9 +57,10 @@ sett = db.loadSettings(sett)
 # the attributes of the Settings object can be found at (scisola/src/lib/settings.py)
 # e.g.
 # setting different crustal model than the one provided by the database
-sett.crustal_model_path = '/home/user/mycrustal.dat'
+#sett.crustal_model_path = '/home/user/mycrustal.dat' (example)
+
 # setting different results folder than the one provided by the database
-sett.output_dir = '/home/user/myoutput'
+#sett.output_dir = '/home/user/myoutput' (example)
 
 # creates a Process Object for calculating
 # fill with the desired values
@@ -67,7 +68,7 @@ sett.output_dir = '/home/user/myoutput'
 # if for example provide a station_list, it calculates a revise procedure, if however station_list is empty, it calculates an automatic procedure. By default, is empty
 # if for example save2DB is False, it won't store the results to scisola database
 # check (scisola/src/lib/process.py) for more info and options
-p = Process(origin=orig, settings=sett, db_scisola=db, save2DB=True, delay=0)
+p = process.Process(origin=orig, settings=sett, db_scisola=db, save2DB=True, delay=0)
 # starting MT calculation
 p.start()
 
