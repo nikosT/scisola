@@ -35,7 +35,7 @@ import  src.lib.process as process
 # the attributes of the Origin object can be found at (scisola/src/lib/origin.py)
 orig = origin.Origin()
 orig.datetime = "2014/11/08 09:21:41.00"
-orig.magnitude = round(3.9,2) # must be no more than 2 decimals
+orig.magnitude = round(3.9,1) # must be no more than 1 decimals
 orig.longitude = 21.747
 orig.latitude = 38.3568
 orig.depth = int(7) # must be integer
@@ -46,7 +46,7 @@ orig.event_id = "test" # the id provided by seiscomp3 or anything you want
 # fill with the desired values
 # the attributes of the Database object can be found at (scisola/src/lib/database.py)
 db = database.Database()
-db.password = "11221122"
+db.password = "password"
 
 # creates a Settings object
 sett = settings.Settings()
