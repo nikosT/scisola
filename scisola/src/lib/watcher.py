@@ -231,7 +231,7 @@ class Watcher:
 
         orig.timestamp = datetime.datetime.utcnow()
         orig.datetime = _datetime
-        orig.magnitude = _magnitude
+        orig.magnitude = round(_magnitude,1) # only 1 decimal
         orig.latitude = _latitude
         orig.longitude = _longitude
         orig.depth = _depth
