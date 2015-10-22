@@ -1,0 +1,15 @@
+Codes time_fixed15.for and time_loop15.for
+need a special compilation!!!!
+
+Example (for time_fixed15)
+rem COMPILE time_fixed15.for, tinv.f90 and nnls.f90 SEPARATELY, 
+rem The compilation requires precision.mod and various *inc files (as ISOLA)
+rem (it reports errors, but it creares *.obj files !!!!!!!)
+
+rem example how to compile in my PC
+rem tr time_fixed15.for
+rem tr tinv.f90
+rem tr nnls.f90
+
+rem Then LINK the three *.obj files to create time_fixed15.exe 
+rem link time_fixed15  tinv nnls

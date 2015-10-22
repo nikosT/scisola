@@ -1,0 +1,35 @@
+This is a new release of ISOLA.
+===============================
+(Fortran codes by J. Zahradnik, Matlab GUI codes by E. Sokos) 
+
+New users should study instructions (examples) of the previous version:
+http://geo.mff.cuni.cz/~jz/isola_brasilia/
+However, new codes of this release would give slightly different results.
+
+Major changes compared to the 'Brasilia version" include
+
+1) All codes use causal filtration (both Fortran and Matlab).
+2) All codes use allstat with  station-dependent frequency range.
+3) Only 2 fiter values are used f1 and f4. Please prescribe f2=f1, f3=f4 if code still asks for 4 values.
+4) Formal shifts of seismograms (50 seconds) are no more used. Seismograms start at t=0, equivalent to origin time.
+5) Take-off angles are calculated as in standard location codes (all first arriving head waves are considered).
+6) CSPS method is included in GUI = combination of polarities and waveforms
+7) New output plot added to CSPS (Variance reduction vs. trial source number nad Mw)
+8) Pearson's correlation coefficient added as output in the uncertainty calculation
+9) Bugs were detected in and removed from the time-function calculation codes (time_fixed and timfuncas)
+10) Uncertainty mapping inlcuded in GUI
+
+HOW TO RUN:
+Unzip the two folders of this distribution, copy them on C disk of your computer and and put these new folders  on your Windows system path INSTEAD of the analogous previous folders with the fortran and GUI codes.
+
+COMPILATION:
+If you need to edit ANY of the *.for code, compile it after edit, and then ALWAYS run COPYNEWNAMES.BAT. It is because GUI will still use the 'old' code names.
+
+Recommendations:
+a) Keep old codes; this new version is still under development.
+b) It is always good if records have their start time 60-120 seconds before origin time.
+
+
+Jiri Zahradnik and Efthimios Sokos
+Praha July 2015 
+
