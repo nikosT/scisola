@@ -1,0 +1,210 @@
+/*
+#Copyright (C) 2015  Triantafyllis Nikolaos
+#
+#This file is part of Scisola tools.
+#
+#    Scisola is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU General Public License as published by
+#    the Free Software Foundation, either version 2 of the License, or
+#    (at your option) any later version.
+#
+#    Scisola is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU General Public License for more details.
+#
+#    You should have received a copy of the GNU General Public License
+#    along with Scisola.  If not, see <http://www.gnu.org/licenses/>.
+
+Basic Template:
+Design by Bryant Smith
+http://www.bryantsmith.com
+http://www.aszx.net
+email: templates [-at-] bryantsmith [-dot-] com
+*/
+
+html, body {
+text-align: center;
+}
+p {text-align: left;}
+
+body {
+	margin: 0;
+	padding: 0;
+	background: #697281;
+	text-align: left;
+/*	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif; */
+	font-size: 16px;
+	color: #F1F5F8;
+	background-color:#277E56;
+}
+*
+{
+  margin: 0 auto 0 auto;
+ text-align:left;}
+
+
+/* A Free Design by Bryant Smith (bryantsmith.com) */
+
+html, body {
+text-align: center;
+}
+p {text-align: left;}
+
+
+
+
+
+#page
+{
+  margin: 0 auto 0 auto; 
+  margin-top:25px;
+  display: block; 
+  height:auto;
+  position: relative; 
+  overflow: hidden; 
+  background: url(images/background_mt.png) repeat-y;
+  width: 738px;
+}
+
+#header
+{
+background-image:url(images/header_mt.png);
+background-repeat:no-repeat;
+height:111px;
+width:738px;
+}
+
+#header h1
+{
+position:relative;
+left:30px;
+top:25px;
+color:#F6F6F6;
+text-align:left;
+font-size:40px;
+font-weight:bold;
+font-family:Arial, Helvetica, sans-serif;
+}
+
+#header h2
+{
+position:relative;
+left:33px;
+top:21px;
+color:#C0C0C0;
+text-align:left;
+font-size:17px;
+font-weight:bold;
+font-family:Arial, Helvetica, sans-serif;
+}
+
+
+#bar
+{
+background-image:url(images/bar_mt.png);
+background-repeat:no-repeat;
+height:55px;
+width:750px;
+line-height:55px;
+padding-left:20px;
+padding-right:20px;
+}
+
+#bar .link
+{
+float:left;
+height:55px;
+}
+
+#bar .link:hover
+{
+background-image:url(images/linkrollover.png);
+background-repeat:no-repeat;
+background-position:center;
+
+
+}
+
+
+#bar a
+{
+font-size:14px;
+font-weight:bold;
+color:#FBFDFB;
+margin-left:27px;
+margin-right:27px;
+
+}
+
+#bar a:hover
+{
+color:#999999;
+}
+
+
+.contentTitle h1
+{
+margin-left:10px;
+padding-top:8px;
+font-size:20px;
+font-weight:bold;
+color:#071027;
+}
+
+.comments
+{
+font-size:11px;
+font-style:italic;
+}
+
+.contentText
+{
+width:700px;
+padding-left:10px;
+padding-right:10px;
+font-size:10px;
+color:#030712;
+line-height:20px;
+letter-spacing:0px;
+}
+
+
+div#mapl a {
+border-bottom:0px dashed #2A2A2A;
+}
+
+
+
+hr{
+border-style: none none dotted; 
+border-bottom:1px dashed #2A2A2A;
+}
+
+
+
+
+a
+{
+text-decoration:none;
+color:#000000;
+border-bottom:1px dashed #2A2A2A;
+}
+
+a:hover
+{
+color:#8F8F8F;
+border-bottom:1px dotted #2A2A2A;
+}
+
+
+#footer {
+width: 738px;
+height:53px;
+background: url(images/footer_mt.png) no-repeat;
+text-align:center;
+font-size:9px;
+color:#2A2A2A;
+padding-top:25px;
+}
+
