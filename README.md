@@ -23,4 +23,6 @@ Licenses
 * scisola_dev under GPLv2
 * scisola_tools under GPLv2 except below:
 * scisola_tools/ISOLA folder is under ISOLA's license
+* scisola_tools/ISOLA15 folder is under ISOLA's license
+
 
