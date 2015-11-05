@@ -24,4 +24,5 @@ Features:
 
 By using this script, scisola can update an html webpage with new MT solutions, in real-time.
 The webpage includes a google map containing marks with the solutions. A list with the latest 50 solutions, 
-and a solution review for each MT calculation. It can also run a simple HTTP server for quick view.
+and a solution review for each MT calculation. It can also run a simple HTTP server for quick view. 
+Quality is defined according to procedure followed in the Geodynamical Institute at the National Observatory of Athens (GINOA) for manual MT solutions (Scognamiglio et al, 2009). Development of this scisola plugin was supported by GINOA.
