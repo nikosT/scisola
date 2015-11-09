@@ -23,6 +23,7 @@ _script="$(readlink -f ${BASH_SOURCE[0]})" # full path to this script
 dirname=`dirname "$_script"` # folder of this script
 
 http_script="$dirname/httpserver.sh" # full path to httpserver.sh
+map_script="$dirname/mapmts.sh" # full path to mapmts.sh
 settings_path="$dirname/settings"
 id_path="$dirname/id"
 
@@ -117,7 +118,7 @@ function start {
   fi
 
   # add to cron
-  crontab -u $SUDO_USER -l | { cat; echo "*/$interval * * * * $_script >/dev/null 2>&1"; } | crontab -u $SUDO_USER -
+  crontab -u $SUDO_USER -l | { cat; echo "*/$interval * * * * $map_script >/dev/null 2>&1"; } | crontab -u $SUDO_USER -
 
   # if SimpleHTTPServer is chosen and http_port has value
   if [ "$http" == "y" ] && ! [ -z "$http_port" ]; then
@@ -146,7 +147,7 @@ function stop {
   fi
 
   # remove from cron
-  crontab -u $SUDO_USER -l | grep -v "$_script" | crontab -u $SUDO_USER -
+  crontab -u $SUDO_USER -l | grep -v "$map_script" | crontab -u $SUDO_USER -
 
   # if SimpleHTTPServer is chosen and http_port has value
   if [ "$http" == "y" ] && ! [ -z "$http_port" ]; then
