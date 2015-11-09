@@ -245,8 +245,11 @@ done < <(mysql --silent -h $host -P $port -u $user --password=$password -D $data
 
 echo "</moment_tensors>" >> $xml_path
 
-chown -R $SUDO_USER:$SUDO_USER $plots_path
-chown $SUDO_USER:$SUDO_USER $xml_path
+if ! [[ $EUID -ne 0 ]]; then
+  chown -R $SUDO_USER:$SUDO_USER $plots_path
+  chown $SUDO_USER:$SUDO_USER $xml_path
+fi
+
 
 # save id to file after update
 } && echo $id > $id_path

@@ -91,11 +91,16 @@ function setup {
   } > $settings_path || { echo "cannot create settings file"; exit -1; }
 
   # secure settings (e.g. MySQL password)
-  chmod 600 $settings_path &
-  chown root:root $settings_path || { echo "cannot change settings file permissions"; exit -1; }
+ # chmod 600 $settings_path &
+ # chown root:root $settings_path || { echo "cannot change settings file permissions"; exit -1; }
+
+  chmod 600 $settings_path & #read-write for user
+  chown $SUDO_USER:$SUDO_USER $settings_path
 
   # creates id file 
   echo "0" > $id_path
+  chmod 600 $id_path & #read-write for user
+  chown $SUDO_USER:$SUDO_USER $id_path
 
   # creates 50 latest MTs
   ./mapmts.sh
