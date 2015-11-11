@@ -170,7 +170,7 @@ def flip(stream):
     return stream
 
 
-def rotate2NE(data_N, data_E, azm_N, angle):
+def rotate2NE(data_N, data_E, angle):
     """
     Rotates data components of stream in North-East components
     at counter-clockwise angle
@@ -535,7 +535,8 @@ def rotateStreams(station_list):
                                                             stream_E.data, \
                                                             -stream.azimuth)
             except:
-                _stream_list.remove(stream)
+		if stream in _stream_list:
+                    _stream_list.remove(stream)
 
         # make new stream list as station's stream list
         station.stream_list = list(_stream_list)
