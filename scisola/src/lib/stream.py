@@ -517,7 +517,7 @@ def rotateStreams(station_list):
                         # according to N component
                         _angle_R = stream.azimuth + 90
                         _angle_L = stream.azimuth - 90
-                        if _angle_R > 360:
+                        if _angle_R >= 360:
                             _angle_R = _angle_R - 360
                         if _angle_L < 0:
                             _angle_L = _angle_L + 360
@@ -530,6 +530,7 @@ def rotateStreams(station_list):
 
                         # rotates data
                         if not stream.azimuth == 0:
+                            print "rotating N,E streams: " + station.code
                             stream.data, stream_E.data = rotate2NE(
                                                             stream.data, \
                                                             stream_E.data, \
