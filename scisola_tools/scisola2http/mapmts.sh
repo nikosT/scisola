@@ -39,6 +39,8 @@ function check {
 
   id=$_id
 
+  cat $id_path > /dev/null 2>&1 || echo "0" > $id_path
+
   id_file=`cat $id_path`
 
   # id <= id_file
@@ -54,6 +56,11 @@ function check {
 check
 
 {
+# init files and folders
+rm -rf $plots_path &&
+rm -rf $xml_path &&
+rm -rf $id_path
+
 # mysql db credentials
 q_mt="SELECT Event.id, Origin.id, Origin.datetime, Origin.timestamp, (CASE WHEN Origin.automatic <> 0 THEN 'automatic' ELSE 'revised' END), Origin.results_dir, Moment_Tensor.cent_time, Moment_Tensor.cent_latitude, Moment_Tensor.cent_longitude, Moment_Tensor.cent_depth, Moment_Tensor.mw, Moment_Tensor.mo,
 Moment_Tensor.correlation, Moment_Tensor.var_reduction, Moment_Tensor.vol, Moment_Tensor.dc, Moment_Tensor.clvd, Moment_Tensor.minSV, Moment_Tensor.maxSV, Moment_Tensor.CN, Moment_Tensor.stVar, Moment_Tensor.fmVar, Moment_Tensor.mrr, Moment_Tensor.mtt, Moment_Tensor.mpp, Moment_Tensor.mrt, Moment_Tensor.mrp, Moment_Tensor.mtp, Moment_Tensor.strike, Moment_Tensor.dip, Moment_Tensor.rake, Moment_Tensor.strike_2, Moment_Tensor.dip_2, Moment_Tensor.rake_2, Moment_Tensor.p_azm, Moment_Tensor.p_plunge, Moment_Tensor.t_azm, Moment_Tensor.t_plunge, Moment_Tensor.b_azm, Moment_Tensor.b_plunge, Moment_Tensor.frequency_1, Moment_Tensor.frequency_2, Moment_Tensor.frequency_3, Moment_Tensor.frequency_4 FROM Event INNER JOIN Origin ON Event.Origin_id = Origin.id INNER JOIN Moment_Tensor ON Origin.id = Moment_Tensor.Origin_id ORDER BY Origin.datetime DESC LIMIT 50;"
