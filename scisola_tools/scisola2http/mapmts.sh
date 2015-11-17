@@ -233,7 +233,7 @@ do
   
 
   # creates beachballs for maps
-  code="import matplotlib.pyplot as plt;from obspy.imaging.beachball import Beachball;import Image;Beachball([${array[30]}, ${array[31]}, ${array[32]}], linewidth=1, facecolor='r', bgcolor='w', width=100, outfile='$plots_path/beachball32_${array[1]}.png');Image.open('$plots_path/beachball32_${array[1]}.png').resize((40,40), Image.ANTIALIAS).save('$plots_path/beachball32_${array[1]}.png')"
+  code="import matplotlib as mpl;mpl.use('Agg');import matplotlib.pyplot as plt;from obspy.imaging.beachball import Beachball;import Image;Beachball([${array[30]}, ${array[31]}, ${array[32]}], linewidth=1, facecolor='r', bgcolor='w', width=100, outfile='$plots_path/beachball32_${array[1]}.png');Image.open('$plots_path/beachball32_${array[1]}.png').resize((40,40), Image.ANTIALIAS).save('$plots_path/beachball32_${array[1]}.png')"
 
   python -c "$code"
 
