@@ -221,7 +221,7 @@ var test="";
     function createBalloon(datetime, cent_longitude, cent_latitude, cent_depth, cent_time, mw, mo, red, strike1, dip1, rake1, strike2, dip2, rake2, dc, clvd, type, id, no_stations, quality){
 
       var string = "<p style=\"font-size:12px\" line-height:2px;>" +
-                   "<b>Datetime:</b> " + datetime.toString() + " (GMT)<br>" +
+                   "<b>Origin Time:</b> " + datetime.toString() + " (GMT)<br>" +
                    "<b>Cent. Lat., Cent. Long.:</b> " + cent_latitude.toString() + " <sup>o</sup>N, " + cent_longitude.toString() + " <sup>o</sup>E" + "<br>" +
                    "<b>Cent. Depth:</b> " + cent_depth.toString() + " km&nbsp;&nbsp;&nbsp;&nbsp;" +
                    "<b>Cent. Time:</b> " + cent_time.toString() + " sec" + "<br>" +

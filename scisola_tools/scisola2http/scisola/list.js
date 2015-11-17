@@ -33,7 +33,7 @@ $(document).ready(function(){
 
   $("#list_link").click(function(){
     $("#main").html("<div id=\"main\" class=\"contentText\"><table id=\"mts\" style=\"width: 100%\" border=\"0\"><tbody><tr> \
-                <td style=\"padding-right: 20px\"><span style=\"font-weight: bold;\">Datetime</span></td>\
+                <td style=\"padding-right: 20px\"><span style=\"font-weight: bold;\">Origin Time</span></td>\
                 <td style=\"padding-right: 20px\"><span style=\"font-weight: bold;\">Latitude</span></td>\
                 <td style=\"padding-right: 20px\"><span style=\"font-weight: bold;\">Longitude</span></td>\
                 <td style=\"padding-right: 20px\"><span style=\"font-weight: bold;\">Depth (km)</span></td>\
