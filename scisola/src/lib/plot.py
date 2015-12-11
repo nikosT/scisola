@@ -341,7 +341,7 @@ def misfit(tl, station_list, depth_folder, plot_file):
         _time_N, _syn_N = np.loadtxt(_syn_file,unpack=True, usecols=[0,1])
         _time_E, _obs_E = np.loadtxt(_fil_file,unpack=True, usecols=[0,2])
         _time_E, _syn_E = np.loadtxt(_syn_file,unpack=True, usecols=[0,2])
-        _time_E, _obs_Z = np.loadtxt(_fil_file,unpack=True, usecols=[0,3])
+        _time_Z, _obs_Z = np.loadtxt(_fil_file,unpack=True, usecols=[0,3])
         _time_Z, _syn_Z = np.loadtxt(_syn_file,unpack=True, usecols=[0,3])
 
         # get all N, E, Z possible streams
