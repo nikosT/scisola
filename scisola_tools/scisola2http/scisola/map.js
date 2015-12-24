@@ -185,7 +185,7 @@ var test="";
     function createMarker(datetime, cent_longitude, cent_latitude, cent_depth, cent_time, mw, mo, red, strike1, dip1, rake1, strike2, dip2, rake2, dc, clvd, type, id, no_stations, quality) {
 
       //mouseover marker display
-      var string = datetime.toString().split(".")[0] + ', <b>Mw:</b> ' + mw.toString()
+      var string = datetime.toString().split(".")[0] + ', Mw: ' + mw.toString()
   
       //set image to marker
       var icon = {
