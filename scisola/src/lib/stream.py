@@ -430,7 +430,14 @@ def removeClipped(station_list, threshold):
 
         for stream in station.stream_list:
             try:
-                if _max_value <= stream.max()[0]:
+
+                # get max value (pos or neg)
+                _max = stream.data.data.max()
+                _min = stream.data.data.min()
+                if abs(_min) > abs(_max):
+                  _max = _min
+
+                if _max_value <= _max:
                     _stream_list.remove(stream)
             except:
                 _stream_list.remove(stream)
@@ -536,7 +543,7 @@ def rotateStreams(station_list):
                                                             stream_E.data, \
                                                             -stream.azimuth)
             except:
-		if stream in _stream_list:
+                if stream in _stream_list:
                     _stream_list.remove(stream)
 
         # make new stream list as station's stream list
