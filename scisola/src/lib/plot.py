@@ -30,7 +30,7 @@ import matplotlib.colorbar as colorbar
 from matplotlib.ticker import FormatStrFormatter
 from mpl_toolkits.axes_grid1 import make_axes_locatable
 from mpl_toolkits.basemap import Basemap
-from obspy.core.util import kilometer2degrees
+from obspy.geodetics import kilometer2degrees
 import numpy as np
 import os
 from PIL import Image

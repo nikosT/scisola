@@ -27,7 +27,7 @@ from multiprocessing import Process as multi_Process
 import datetime
 import obspy.core.utcdatetime as obspy_utc
 import subprocess
-import obspy.core.util.geodetics as obspy_geo
+import obspy.geodetics as obspy_geo
 
 # scisola's imports
 import process
@@ -246,7 +246,7 @@ def inrange(center_lat, center_lon, event_lat, event_lon, dist_range):
     center location defined by the user
     """
 
-    dist = obspy_geo.gps2DistAzimuth(center_lat, center_lon,
+    dist = obspy_geo.base.gps2dist_azimuth(center_lat, center_lon,
                                      event_lat, event_lon)
 
     dist = float(dist[0]/1000.0)

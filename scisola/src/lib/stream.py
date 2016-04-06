@@ -25,7 +25,7 @@ sys.dont_write_bytecode = True
 from obspy import read as obspy_read
 import obspy.core.stream as obspy_stream
 import obspy.core.utcdatetime as obspy_utc
-import obspy.core.util.geodetics as obspy_geo
+import obspy.geodetics as obspy_geo
 import operator
 import datetime as date
 import os
@@ -300,7 +300,7 @@ def calculateDistAzm(station_list, origin):
     """
 
     for station in station_list:
-        _result = obspy_geo.gps2DistAzimuth(origin.latitude,
+        _result = obspy_geo.base.gps2dist_azimuth(origin.latitude,
                                             origin.longitude,
                                             station.latitude,
                                             station.longitude)
