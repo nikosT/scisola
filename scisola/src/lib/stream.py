@@ -430,7 +430,7 @@ def removeClipped(station_list, threshold):
 
         for stream in station.stream_list:
             try:
-                if _max_value <= stream.max():
+                if _max_value <= stream.max()[0]:
                     _stream_list.remove(stream)
             except:
                 _stream_list.remove(stream)
