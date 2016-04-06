@@ -455,7 +455,7 @@ def removeGapped(station_list):
             try:
                 _st = obspy_stream.Stream()
                 _st.append(stream.data)
-                _gaps = _st.getGaps()
+                _gaps = _st.get_gaps()
                 if _gaps:
                     _stream_list.remove(stream)
             except:
