@@ -303,7 +303,7 @@ def correlation(depth_x, correlation_y, dc, beachballs, plot_file):
         color = cm(dc[i]/100.0)
 
         # draws beachball
-        b = beach.Beach([beachballs[i][0], beachballs[i][1],
+        b = beach.beach([beachballs[i][0], beachballs[i][1],
                          beachballs[i][2]], xy=(depth_x[i], correlation_y[i]),
                          width=80, linewidth=1, facecolor=color)
 
@@ -459,7 +459,7 @@ def contour(time_list, depth_list, dc_list, corr_list, beachball_list,
     plt.margins(0.05)
 
     tri.Triangulation(time_list, depth_list)
-    levels=[0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.8, 1.0]
+    levels=[0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0]
     cont = plt.tricontour(time_list, depth_list, corr_list,
                           len(levels), levels=levels, linewidths=0.5,
                           colors='k')
@@ -487,7 +487,7 @@ def contour(time_list, depth_list, dc_list, corr_list, beachball_list,
             _width = 35
 
 	   # draws beachball
-        b = beach.Beach([beachball_list[i][0], beachball_list[i][1],
+        b = beach.beach([beachball_list[i][0], beachball_list[i][1],
                        beachball_list[i][2]], xy=(time_list[i],depth_list[i]),
                        width=_width, linewidth=1, facecolor=_color)
 
@@ -537,9 +537,9 @@ def beachBall(strike,dip,rake,mrr,mtt,mpp,mrt,mrp,mtp,plot_file):
     fig = plt.figure(figsize=(_fig_x,_fig_y))
 
     # mt
-    beach.Beachball([mrr,mtt,mpp,mrt,mrp,mtp], facecolor='r', fig=fig)
+    beach.beachball([mrr,mtt,mpp,mrt,mrp,mtp], facecolor='r', fig=fig)
     # dc
-    beach.Beachball([strike,dip,rake], nofill=True, fig=fig)
+    beach.beachball([strike,dip,rake], nofill=True, fig=fig)
 
     fig.savefig(plot_file)
 
@@ -644,7 +644,7 @@ def maps(station_list, origin, strike, dip, rake, plot_file):
 
     # beachball
     ax = plt.gca()
-    b = beach.Beach([strike, dip, rake], xy=(x,y), width=35000, linewidth=1,
+    b = beach.beach([strike, dip, rake], xy=(x,y), width=35000, linewidth=1,
                     facecolor='r')
     b.set_zorder(10)
     ax.add_collection(b)
@@ -694,4 +694,5 @@ def results2text(station_list, origin, settings, results_folder,
 
     _f.write(_str)
     _f.close()
+
 
