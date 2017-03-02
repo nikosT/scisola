@@ -783,8 +783,14 @@ class Process:
             # calculating xl
             _max_dist = max(station.distance_by_origin for station in
                             self.station_list)
-            _xl = 20 * 1000 * _max_dist * 2
 
+            # old rule: _xl = 20 * 1000 * _max_dist * 2
+            # new rule in xl
+	    if int(_max_dist) > 100:
+                _xl = 20 * 1000 * _max_dist
+            else:
+	        _xl = 2000000
+		
             isola.createGrdatFile(self.crustal_layers, _nfreq, self.tl,
                                   len(self.station_list), _xl,
                                   self.dir.grdat)
