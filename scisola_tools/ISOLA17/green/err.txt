@@ -1,0 +1,40 @@
+elemse.for:321:14:
+
+           if (s1 .eq. zero) go to 45                                     
+              1
+Warning: Equality comparison for REAL(8) at (1)
+elemse.for:206:14:
+
+           bux=real(ux(itim,ir,it))       
+              1
+Warning: Possible change of value in conversion from REAL(8) to REAL(4) at (1) [-Wconversion]
+elemse.for:207:14:
+
+           buy=real(uy(itim,ir,it))
+              1
+Warning: Possible change of value in conversion from REAL(8) to REAL(4) at (1) [-Wconversion]
+elemse.for:208:14:
+
+           buz=real(uz(itim,ir,it))
+              1
+Warning: Possible change of value in conversion from REAL(8) to REAL(4) at (1) [-Wconversion]
+elemse.for:218:14:
+
+           bux=real(ux(itim,ir,it))       
+              1
+Warning: Possible change of value in conversion from REAL(8) to REAL(4) at (1) [-Wconversion]
+elemse.for:219:14:
+
+           buy=real(uy(itim,ir,it))
+              1
+Warning: Possible change of value in conversion from REAL(8) to REAL(4) at (1) [-Wconversion]
+elemse.for:220:14:
+
+           buz=real(uz(itim,ir,it))
+              1
+Warning: Possible change of value in conversion from REAL(8) to REAL(4) at (1) [-Wconversion]
+elemse.for:18:45:
+
+       integer      nsp,nrp,ncp,ntp,nrtp,nrtp2,icc,ics,ifr
+                                             1
+Warning: Unused parameter ‘nrtp2’ declared at (1) [-Wunused-parameter]
