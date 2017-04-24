@@ -4,7 +4,7 @@ sudo apt-get install python-pip
 sudo apt-get install python-dev
 sudo apt-get install libpng-dev
 sudo apt-get install libfreetype6-dev
-sudo apt-get install gfortran libopenblas-dev liblapack-dev
+sudo apt-get install gfortran gfortran-multilib libopenblas-dev liblapack-dev
 sudo pip install numpy
 sudo pip install matplotlib
 sudo pip install obspy
