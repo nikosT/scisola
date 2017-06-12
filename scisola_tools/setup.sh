@@ -27,3 +27,6 @@ cd ..
 sudo python setup.py install
 sudo pip install --upgrade six
 
+sudo pip install -U obspy
+
+
