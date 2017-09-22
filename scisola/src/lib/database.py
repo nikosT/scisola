@@ -480,6 +480,7 @@ class Database:
             # if True, deletes all rows from stations and streams tables
             if reset:
                 _query = "DELETE FROM `Station`;"
+		queries.append(_query)
 		_query = "DELETE FROM `Stream`;" # if scisola_alter database used
                 queries.append(_query)
 
