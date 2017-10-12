@@ -1,0 +1,4 @@
+network,code,latitude,longitude,priority
+HL,ALNA,39.14804,23.86669,0
+HL,ARG,36.21356,28.12122,4
+HL,APE,37.07274,25.52301,5
