@@ -579,8 +579,7 @@ def correctStreams(station_list, datetime, tl):
                 _paz_sts = {'poles': stream.poles_content,
                             'zeros': stream.zeros_content,
                             'gain': stream.norm_factor,
-                            'sensitivity': stream.gain_sensor * \
-                                           stream.gain_datalogger
+                            'sensitivity': stream.gain_datalogger
                             }
 
                 _start_time = obspy_utc.UTCDateTime(_datetime - \
