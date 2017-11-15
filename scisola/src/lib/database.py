@@ -413,7 +413,7 @@ class Database:
                 # query for fetching streams from SeisComP3
                 _query = "SELECT Stream._oid, Station._oid, Stream.code, " + \
                 "Stream.azimuth, Stream.dip, ResponsePAZ.gain, " + \
-                "Datalogger.gain, ResponsePAZ.normalizationFactor, " + \
+                "Stream.gain, ResponsePAZ.normalizationFactor, " + \
                 "ResponsePAZ.numberOfZeros, ResponsePAZ.zeros_content, " + \
                 "ResponsePAZ.numberOfPoles, ResponsePAZ.poles_content " + \
                 "FROM Stream " + \
@@ -449,7 +449,7 @@ class Database:
                 _query = "SELECT Stream._oid, Station._oid, " + \
                 "Stream.m_code, " + \
                 "Stream.m_azimuth, Stream.m_dip, ResponsePAZ.m_gain, " + \
-                "Datalogger.m_gain, ResponsePAZ.m_normalizationFactor, " + \
+                "Stream.m_gain, ResponsePAZ.m_normalizationFactor, " + \
                 "ResponsePAZ.m_numberOfZeros, " + \
                 "encode(ResponsePAZ.m_zeros_content,'escape'), " + \
                 "ResponsePAZ.m_numberOfPoles, " + \
