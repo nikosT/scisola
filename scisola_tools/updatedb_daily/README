@@ -1,0 +1,2 @@
+
+Update the scisola database from SeisComP3 database as well as appling the stations.txt priorities daily by adding the .sh script in cron.
