@@ -34,7 +34,7 @@ source $settings_path # import settings
 
 function check {
 
-  q_check="SELECT Origin.id FROM Origin ORDER BY Origin.datetime DESC LIMIT 1;"
+  q_check="SELECT Origin.id FROM Origin ORDER BY Origin.id DESC LIMIT 1;"
   _id=`mysql --silent -h $host -P $port -u $user --password=$password -D $database<<<$q_check`
 
   id=$_id
