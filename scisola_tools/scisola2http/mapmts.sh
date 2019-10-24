@@ -57,9 +57,8 @@ check
 
 {
 # init files and folders
-rm -rf $plots_path &&
-rm -rf $xml_path &&
-rm -rf $id_path
+rm $xml_path;
+rm $id_path
 
 # mysql db credentials
 q_mt="SELECT Event.id, Origin.id, Origin.datetime, Origin.timestamp, (CASE WHEN Origin.automatic <> 0 THEN 'automatic' ELSE 'revised' END), Origin.results_dir, Moment_Tensor.cent_time, Moment_Tensor.cent_latitude, Moment_Tensor.cent_longitude, Moment_Tensor.cent_depth, Moment_Tensor.mw, Moment_Tensor.mo,
@@ -69,6 +68,7 @@ Moment_Tensor.correlation, Moment_Tensor.var_reduction, Moment_Tensor.vol, Momen
 rm -rf $plots_path && mkdir $plots_path
 touch "$plots_path/index.html"
 
+touch $xml_path
 echo "<moment_tensors>" > $xml_path
 
 while read line
