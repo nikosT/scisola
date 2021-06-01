@@ -1,6 +1,14 @@
 
 This repository is no longer maintained. Use the newer and more enchanced version, named Gisola, which is available at https://github.com/nikosT/Gisola/
 
+<a href="https://github.com/nikosT/Gisola">
+<img src="https://github.com/nikosT/Gisola/blob/main/gisola.png" width="30%"/>
+</a>
+<br/><br/>
+
+***
+
+The scisola software is no longer maintained. 
 
 
 
