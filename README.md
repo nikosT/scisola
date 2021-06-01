@@ -1,3 +1,10 @@
+
+This repository is no longer maintained. Use the newer and more enchanced version, named Gisola, which is available at https://github.com/nikosT/Gisola/
+
+
+
+
+
 The folder contains three subfolders:
 
 scisola
