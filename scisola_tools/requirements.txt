@@ -57,7 +57,7 @@ PAM==0.4.2
 paramiko==2.10.1
 pbr==1.8.0
 pexpect==4.0.1
-Pillow==8.1.1
+Pillow==9.0.1
 piston-mini-client==0.7.5
 psycopg2==2.6.1
 ptyprocess==0.5
