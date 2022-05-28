@@ -98,7 +98,7 @@ suds==0.4
 suds-jurko==0.7.dev0
 texttable==0.9.1
 tornado==4.2.1
-Twisted==22.2.0
+Twisted==22.4.0
 ubuntu-dev-tools===0.155ubuntu2
 ubuntuone-client-data==14.4
 unity-lens-photos==1.0
